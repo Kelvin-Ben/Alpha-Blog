@@ -1,24 +1,2 @@
 <h2>Showing editing of Articles</h2>
-
-<% if @article.errors.any? %>
-<h3>The following errors have prevented article to be created</h3>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-<%= form_with model: @article do |f| %>
-  <span>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </span> 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-<%= link_to "Back to Articles Listing", articles_path %>
+<%= render "form" %>
